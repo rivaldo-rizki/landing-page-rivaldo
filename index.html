@@ -191,18 +191,19 @@
             height: 320px;
             border-radius: 50%;
             overflow: hidden;
-            margin-bottom: 25px;
             border: 10px solid var(--white);
             box-shadow: var(--shadow);
-            position: relative;
         }
 
         .profile-photo {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: block;
+            /* bikin foto pas tanpa gepeng */
+            object-position: center;
+            /* fokus ke tengah wajah */
         }
+
 
         .photo-placeholder {
             width: 100%;
@@ -651,6 +652,12 @@
                 text-align: center;
             }
         }
+        .profile-photo-container {
+    box-shadow: 
+      0 0 20px rgba(251,37,118,0.4),
+      0 10px 30px rgba(0,0,0,0.3);
+}
+
     </style>
 </head>
 
@@ -708,29 +715,25 @@
 
             <div class="about-flex">
 
-               
+
                 <!-- TEKS -->
                 <div class="about-content">
                     <img src="Hayyiee! Rivaldo here✨.png">
                     <img src="UXBIGG~1.PNG">
-                    
+
                     <a href="https://www.linkedin.com" class="about-link" target="_blank">Let's connect and
                         collaborate!</a>
                 </div>
 
                 <div class="profile-section">
                     <div class="profile-photo-container">
-                        
-                        <!-- Ganti src dengan URL foto Anda -->
-                        <img id="profileImage"
-                            src="ri.jpeg"
-                            alt="Rivaldo Riski Ramadhan" class="profile-photo">
-                        <!-- Fallback jika tidak ada gambar -->
-
+                        <img src="ri.jpeg" class="profile-photo" alt="Rivaldo Profile">
                     </div>
-
                 </div>
+
+
             </div>
+        </div>
     </section>
 
 
@@ -755,7 +758,7 @@
 
                     <div class="edu-item">
                         <div class="edu-title">SMKN 8 Bandar Lampung</div>
-                        <div class="edu-years">2024- 2027/div>
+                        <div class="edu-years">2024- 2027</div>
                     </div>
                 </div>
 
@@ -1031,5 +1034,3 @@
 </body>
 
 </html>
-
-
