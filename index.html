@@ -10,7 +10,6 @@
         rel="stylesheet">
     <style>
         :root {
-
             --primary-color: #FB2576;
             --secondary-color: #4A44C6;
             --dark-color: #ffffff;
@@ -637,7 +636,6 @@
         .about-content {
             flex: 1;
             text-align: left;
-
         }
 
         .profile-section {
@@ -651,6 +649,117 @@
                 text-align: center;
             }
         }
+
+        /* ===== STYLE BARU UNTUK 3 GAMBAR ===== */
+        .my-gallery-section {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+
+        .gallery-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            background-color: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .gallery-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 5px;
+        }
+
+        .gallery-type {
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        /* Style untuk gambar di about section */
+        .about-image-container {
+            display: flex;
+            gap: 20px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .about-image {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            border: 3px solid var(--primary-color);
+        }
+
+        .about-image:hover {
+            transform: scale(1.05);
+        }
+
+        .image-label {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: var(--gray-color);
+        }
+
+        @media (max-width: 768px) {
+            .about-image {
+                width: 150px;
+                height: 150px;
+            }
+        }
     </style>
 </head>
 
@@ -662,18 +771,18 @@
             <nav class="nav-links">
                 <a href="#home">Home</a>
                 <a href="#about">About Me</a>
-                <a href="#education">Educations & Skills</a>
+                <a href="#gallery">My Gallery</a>
+                <a href="#education">Education & Skills</a>
                 <a href="#portfolio">Portfolio</a>
                 <a href="#contact">Contact</a>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section - UPDATED LAYOUT -->
+    <!-- Hero Section -->
     <section id="home" class="hero-section">
         <div class="container">
             <div class="hero-content">
-                <!-- Hero Text Section -->
                 <div class="hero-text">
                     <h1>Hey, I'm <span class="highlight">Rivaldo Riski Ramadhan</span></h1>
                     <p>I'm a <strong>Passionate Student</strong></p>
@@ -688,16 +797,11 @@
                     <a href="#contact" class="btn btn-primary">Contact Me</a>
                 </div>
 
-                <!-- Profile Photo Section - NOW BELOW THE TEXT -->
-
-
                 <div class="profile-info">
-
                     <button class="change-photo-btn" id="changePhotoBtn"></button>
                     <input type="file" id="photoUpload" accept="image/*" style="display: none;">
                 </div>
             </div>
-        </div>
         </div>
     </section>
 
@@ -707,31 +811,81 @@
             <h2 class="section-title">About Me</h2>
 
             <div class="about-flex">
-
-               
-                <!-- TEKS -->
+                <!-- TEKS & GAMBAR -->
                 <div class="about-content">
-                    <img src="Hayyiee! Rivaldo here✨.png">
-                    <img src="UXBIGG~1.PNG">
+                    <h3>Welcome to My Portfolio!</h3>
+                    <p>Hello! I'm Rivaldo Riski Ramadhan, a passionate student currently studying at SMKN 8 Bandar Lampung. I have a keen interest in web development, UI/UX design, and creating digital experiences that make a difference.</p>
                     
-                    <a href="https://www.linkedin.com" class="about-link" target="_blank">Let's connect and
-                        collaborate!</a>
+                    <p>I believe in continuous learning and enjoy exploring new technologies. When I'm not coding, you can find me working on creative projects, learning new skills, or collaborating with others on exciting ventures.</p>
+
+                    <!-- TAMBAHAN: 2 Gambar di About Section -->
+                    <div class="about-image-container">
+                        <div>
+                            <img src="Hayyiee! Rivaldo here.png" alt="Hayyiee! Rivaldo" class="about-image">
+                            <div class="image-label">Hayyiee! Rivaldo</div>
+                        </div>
+                        <div>
+                            <img src="UXBIGG~1.PNG" alt="UX Project" class="about-image">
+                            <div class="image-label">UX Project</div>
+                        </div>
+                    </div>
+
+                    <a href="https://www.linkedin.com" class="about-link" target="_blank">Let's connect and collaborate!</a>
                 </div>
 
                 <div class="profile-section">
                     <div class="profile-photo-container">
-                        <!-- Ganti src dengan URL foto Anda -->
-                        <img id="profileImage"
-                            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            alt="Rivaldo Riski Ramadhan" class="profile-photo">
-                        <!-- Fallback jika tidak ada gambar -->
-
+                        <!-- Ganti dengan foto ri.jpeg -->
+                        <img id="profileImage" src="ri.jpeg" alt="Rivaldo Riski Ramadhan" class="profile-photo" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80';">
+                        <div id="photoPlaceholder" class="photo-placeholder" style="display: none;">
+                            <i class="fas fa-user"></i>
+                            <span>Add Photo</span>
+                        </div>
                     </div>
-
+                    <div class="profile-info">
+                        <div class="profile-name">Rivaldo Riski Ramadhan</div>
+                        <div class="profile-class">Student • Web Developer</div>
+                        <button class="change-photo-btn" id="changePhotoBtn">Change Photo</button>
+                    </div>
                 </div>
             </div>
+        </div>
     </section>
 
+    <!-- ===== SECTION BARU: MY GALLERY ===== -->
+    <section id="gallery" class="my-gallery-section">
+        <div class="container">
+            <h2 class="gallery-title">My Gallery</h2>
+            <div class="gallery-grid">
+                <!-- Gambar 1: ri.jpeg -->
+                <div class="gallery-item">
+                    <img src="ri.jpeg" alt="Rivaldo Photo" class="gallery-img" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80';">
+                    <div class="gallery-info">
+                        <div class="gallery-name">Rivaldo Riski Ramadhan</div>
+                        <div class="gallery-type">Profile Photo</div>
+                    </div>
+                </div>
+
+                <!-- Gambar 2: Hayyiee! Rivaldo here.png -->
+                <div class="gallery-item">
+                    <img src="Hayyiee! Rivaldo here.png" alt="Hayyiee! Rivaldo" class="gallery-img">
+                    <div class="gallery-info">
+                        <div class="gallery-name">Hayyiee! Rivaldo</div>
+                        <div class="gallery-type">Creative Work</div>
+                    </div>
+                </div>
+
+                <!-- Gambar 3: UXBIGG~1.PNG -->
+                <div class="gallery-item">
+                    <img src="UXBIGG~1.PNG" alt="UX Project" class="gallery-img">
+                    <div class="gallery-info">
+                        <div class="gallery-name">UX Project</div>
+                        <div class="gallery-type">Design Work</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Education & Skills Section -->
     <section id="education" class="edu-skills-section">
@@ -739,11 +893,10 @@
             <div class="edu-skills-content">
                 <!-- Education -->
                 <div class="education-list">
-                    <h2 class="section-title" style="font-size: 2rem; text-align: left; margin-bottom: 30px;">Education
-                    </h2>
+                    <h2 class="section-title" style="font-size: 2rem; text-align: left; margin-bottom: 30px;">Education</h2>
 
                     <div class="edu-item">
-                        <div class="edu-title">SDN Dua Palapa </div>
+                        <div class="edu-title">SDN Dua Palapa</div>
                         <div class="edu-years">2015 - 2021</div>
                     </div>
 
@@ -754,14 +907,13 @@
 
                     <div class="edu-item">
                         <div class="edu-title">SMKN 8 Bandar Lampung</div>
-                        <div class="edu-years">2024- 2027/div>
+                        <div class="edu-years">2024 - 2027</div>
                     </div>
                 </div>
 
                 <!-- Skills -->
                 <div class="skills-list">
-                    <h2 class="section-title" style="font-size: 2rem; text-align: left; margin-bottom: 30px;">Skills
-                    </h2>
+                    <h2 class="section-title" style="font-size: 2rem; text-align: left; margin-bottom: 30px;">Skills</h2>
 
                     <div class="skill-item">
                         <div class="skill-name">
@@ -810,7 +962,7 @@
     <!-- Portfolio Section -->
     <section id="portfolio" class="portfolio-section">
         <div class="container">
-            <h2 class="section-title">Portofolio</h2>
+            <h2 class="section-title">Portfolio</h2>
             <p class="portfolio-intro">Beberapa proyek yang pernah saya kerjakan.</p>
 
             <div class="portfolio-grid">
@@ -852,8 +1004,7 @@
         <div class="container">
             <h2 class="section-title">Contact Me</h2>
             <div class="contact-content">
-                <p style="text-align: center; margin-bottom: 30px; font-size: 1.1rem;">Kirim pesan ke saya melalui
-                    formulir di bawah ini.</p>
+                <p style="text-align: center; margin-bottom: 30px; font-size: 1.1rem;">Kirim pesan ke saya melalui formulir di bawah ini.</p>
 
                 <form class="contact-form" id="contactForm">
                     <div class="form-group">
@@ -904,7 +1055,8 @@
             <div class="footer-links">
                 <a href="#home">Home</a>
                 <a href="#about">About Me</a>
-                <a href="#education">Educations & Skills</a>
+                <a href="#gallery">My Gallery</a>
+                <a href="#education">Education & Skills</a>
                 <a href="#portfolio">Portfolio</a>
                 <a href="#contact">Contact</a>
             </div>
@@ -1028,5 +1180,4 @@
         });
     </script>
 </body>
-
 </html>
